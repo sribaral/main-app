@@ -12,4 +12,4 @@ FROM tomcat:10.0-jdk11
 
 COPY --from=build /app/target/main-app-1.0.0.war /usr/local/tomcat/webapps/ROOT.war
 
-EXPOSE 8080
+EXPOSE 8000
