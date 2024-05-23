@@ -12,4 +12,8 @@ FROM tomcat:10.0-jdk11
 
 COPY --from=build /app/target/main-app-1.0.0.war /usr/local/tomcat/webapps/ROOT.war
 
+RUN sed -i 's/port="8080"/port="8000"/' /usr/local/tomcat/conf/server.xml
+
 EXPOSE 8000
+
+CMD ["catalina.sh", "run"]
